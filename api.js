@@ -1,5 +1,3 @@
-import mock from './mock/mock.js';
-
 const URL = "https://script.google.com/macros/s/AKfycbzupNHlJM6lWjGT2lGqf-J28rIxCWr6mOpEL3sEkuzrRWEQ8ylv/exec?";
 
 class Api {
@@ -27,16 +25,5 @@ class Api {
   }
 }
 
-class ApiMock {
-  search(text, page) {
-    return new Promise(res => {
-      setTimeout(() => {
-        res(JSON.parse(JSON.stringify(mock)));
-      }, 1000);
-    });
-  }
-}
-
 const api = new Api();
-// const api = new ApiMock();
 export default api;
